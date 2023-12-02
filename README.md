@@ -23,7 +23,7 @@ This is the final project of our CSE370 course (Database Systems) The idea is, u
 
 <img src="documentation/database/Project R Schema.png" alt="drawing"/>
 
-## Featuers
+## Featuers 🧑🏻‍💻
 
 **Dynamic Navbar:** The navbar on the site changes based on the user role and session status. If a donor is logged in the navbar changes according to donor features. And if an admin logged in navbar contains some more menu items like manage donations, manage requests, etc. Also, a drop-down menu with the user’s first name appears after a successful login.
 
@@ -74,7 +74,7 @@ Users can change the password. For that, they will have to enter their current p
 
 - **Manage Reports (Action):** This is an admin/staff-accessible only feature. Based on the type of reports, admin/staff will be able to take action. If a violator ID is given, the admin/staff can ban the violator directly. But if the violator ID is not available then the the admin/staff will look into the matter and will ban the violator from the manage_users page manually and after that, they will mark the report as resolved.
 
-## Contributions
+## Contributions 🧑🏻‍💻
 
 ### Sabbir Bin Abdul Latif (21201200)
 
@@ -160,7 +160,7 @@ Install the required packages using the requirements.txt file.
    mysql -u [username] -p project_r < project_r_backup.sql
    ```
 
-Replace [username] with your MySQL username, and the path to the backup file, respectively.
+Replace [username] with your MySQL username, and the path to the backup file, respectively. If you getting problem doing this you may also use SQL queries to create table of `documentation/database/schema.sql` to add the databse in your profile.
 
 #### Step 4: Configuring Your Flask Application
 
@@ -169,13 +169,14 @@ Replace [username] with your MySQL username, and the path to the backup file, re
 
     ```
     import os
-        class Config:
-            DB_USER = os.getenv('DB_USER', 'your_username')
-            DB_PASSWORD = os.getenv('DB_PASSWORD', 'your_password')
-            DB_HOST = os.getenv('DB_HOST', 'localhost')
-            DB_NAME = os.getenv('DB_NAME', 'project_r')
-            DB_PORT = os.getenv('DB_PORT', '3306')
-            DB_RAISE_ON_WARNINGS = os.getenv('DB_RAISE_ON_WARNINGS', True)
+
+    class Config:
+        DB_USER = os.getenv('DB_USER', 'your_username')
+        DB_PASSWORD = os.getenv('DB_PASSWORD', 'your_password')
+        DB_HOST = os.getenv('DB_HOST', 'localhost')
+        DB_NAME = os.getenv('DB_NAME', 'project_r')
+        DB_PORT = os.getenv('DB_PORT', '3306')
+        DB_RAISE_ON_WARNINGS = os.getenv('DB_RAISE_ON_WARNINGS', True)
     ```
 
     Replace [your_username], and [your_password] with your MySQL username respectively.
@@ -202,6 +203,14 @@ Replace [username] with your MySQL username, and the path to the backup file, re
 #### Step 6: Accessing the Application
 
 - Open a web browser and navigate to http://127.0.0.1:5000 (or the URL provided in the terminal).
+- Register as a new user. Then make the user admin with the following queries:
+
+```
+UPDATE users SET user_type = 'Admin' WHERE user_id = 1;
+INSERT INTO staff (user_id, role) VALUES (1, 'Admin');
+```
+
+Now the first user is set as an admin and you are ready to explore the website.
 
 ##### Additional Notes
 
@@ -229,6 +238,4 @@ Thanks goes to these wonderful people
   </tr>
 </table>
 
-## Licenses 📃
-
-[MIT](LICENSE)
+## [Licenses](LICENSE) 📃
