@@ -17,11 +17,11 @@ This is the final project of our CSE370 course (Database Systems) The idea is, u
 
 ## ER Diagram 🔗
 
-<img src="app/static/images/Project R EER.png" alt="drawing"/>
+<img src="documentation/database/Project R EER.png" alt="drawing"/>
 
 ## Schema Diagram 📑
 
-<img src="app/static/images/Project R Schema.png" alt="drawing"/>
+<img src="documentation/database/Project R Schema.png" alt="drawing"/>
 
 ## Featuers and Contributions
 
@@ -167,11 +167,11 @@ Thanks goes to these wonderful people
     <br />
     <sub><b>Sabbir Bin Abdul Latif</b></sub></a>
     </td>
-    <td align="center"><a href="#"><img src="static/images/team/Sultan Mehedi Masud.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="#"><img src="app/static/images/team/Sultan Mehedi Masud.jpeg" width="100px;" alt=""/>
     <br />
     <sub><b>Sultan Mehedi Masud</b></sub></a>
     </td>
-    <td align="center"><a href="#"><img src="static/images/team/Susmita Biswas.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="#"><img src="app/static/images/team/Susmita Biswas.jpeg" width="100px;" alt=""/>
     <br />
     <sub><b>Susmita Biswas</b></sub></a>
     </td>
