@@ -78,35 +78,35 @@ Users can change the password. For that, they will have to enter their current p
 
 ### Sabbir Bin Abdul Latif (21201200)
 
-    - [x] Dynamic Navbar
-    - [x] Dynamic Dashboard
-    - [x] Manage Request (Action)
-    - [x] User Report
-    - [x] Manage Donation (Action)
-    - [x] Manage Reports (Action)
-    - [x] Add Donation
-    - [x] Forget Password
+- [x] Dynamic Navbar
+- [x] Dynamic Dashboard
+- [x] Manage Request (Action)
+- [x] User Report
+- [x] Manage Donation (Action)
+- [x] Manage Reports (Action)
+- [x] Add Donation
+- [x] Forget Password
 
 ### Sultan Mehedi Masud (22101071)
 
-    - [x] Request Donation
-    - [x] Manage Users
-    - [x] Manage Reports
-    - [x] Manage Donations
-    - [x] Manage Requests
-    - [x] History
-    - [x] Current Requests
+- [x] Request Donation
+- [x] Manage Users
+- [x] Manage Reports
+- [x] Manage Donations
+- [x] Manage Requests
+- [x] History
+- [x] Current Requests
 
 ### Susmita Biswas (22101380)
 
-    - [x] Registration (Except Diseases)
-    - [x] Login
-    - [x] Logout
-    - [x] Change Password
-    - [x] Edit Profile (Except Diseases)
-    - [x] Edit User
-    - [x] Delete User
-    - [x] User Profile
+- [x] Registration (Except Diseases)
+- [x] Login
+- [x] Logout
+- [x] Change Password
+- [x] Edit Profile (Except Diseases)
+- [x] Edit User
+- [x] Delete User
+- [x] User Profile
 
 🔗 [Live link of the Application](https://google.com/)
 
