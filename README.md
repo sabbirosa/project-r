@@ -1,31 +1,35 @@
 # project-r
+
 ## Featuers and Contributions
 
 ### Sabbir Bin Abdul Latif (21201200)
 
-    [x] Dynamic dashboard based on the user's role (Admin/Staff/Donor).
-    [x] Change password
-    [x] Edit User
-    [x] Forget password
-    [x] Manage requests
-    [x] Manage users
-    [x] Report
-    [x] Error page
+    - Dynamic Navbar
+    - Dashboard
+    - Manage Requests (Handle)
+    - User Report
+    - Manage Donations (Handle)
+    - Manage Reports (Handle)
+    - Add Donation
+    - Forget Password
 
 ### Sultan Mehedi Masud ()
 
-    [x] Registration page
-    [x] About us page
-    [x] Add donation
-    [x] Manage donations
-    [x] User profile
-    [x] Edit profile
+    - Request Donation
+    - Manage Users
+    - Manage Reports
+    - Manage Donations
+    - Manage Requests
+    - History
+    - Current Requests
 
 ### Susmita Biswas (22101380)
 
-    [x] Login page
-    [x] Home page
-    [x] Contact us page
-    [x] Request donation
-    [x] History
-    [x] Manage reports
+    - Registration (Except Diseases)
+    - Login
+    - Logout
+    - Change Password
+    - Edit Profile (Except Diseases)
+    - Edit User
+    - Delete User
+    - User Profile
