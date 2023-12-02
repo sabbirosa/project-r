@@ -1,0 +1,23 @@
+{% extends 'layout.html' %} {% block title %}Report User - {% endblock %} {%
+block content %}
+<h2>Report Violation</h2>
+<form method="post">
+  <label for="reporter_id">Reporter ID:</label>
+  <input
+    type="text"
+    name="reporter_id"
+    value="{{ current_user.id }}"
+    disabled
+  />
+
+  <label for="violator_id">Violator ID:</label>
+  <input type="text" name="violator_id" />
+  <div>
+    <label for="violation_reason">Violation Details:</label>
+    <textarea name="violation_reason" required></textarea>
+  </div>
+
+  <button type="submit">Submit Report</button>
+</form>
+
+{% endblock %}

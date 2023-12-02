@@ -1,0 +1,58 @@
+{% extends "layout.html" %} {% block title %}Contact Us - {% endblock %} {%
+block content %}
+<div class="container mt-4">
+  <section class="page-header text-center">
+    <h2>Contact Us</h2>
+    <p>
+      Feel free to reach out to us with any inquiries or questions. We'd love to
+      hear from you!
+    </p>
+  </section>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <section class="contact-info">
+        <h2>Contact Information</h2>
+        <p>
+          <strong>Email:</strong> info@example.com<br />
+          <strong>Phone:</strong> +123 456 7890<br />
+          <strong>Address:</strong> 123 Street, Cityville, Country
+        </p>
+      </section>
+    </div>
+
+    <div class="col-md-6">
+      <section class="contact-form">
+        <h2>Send us a Message</h2>
+        <form action="#" method="post">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="action-btn">Send Message</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

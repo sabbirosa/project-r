@@ -1,0 +1,75 @@
+{% extends "layout.html" %} {% block title %}Current Requests - {% endblock %}
+{% block content %}
+<div class="mt-4 body-container">
+  <h2 class="text-center">Current Requests</h2>
+  {% if requests %}
+  <table class="table text-center align-middle">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Hospital Name</th>
+        <th>Blood Group Requested</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for request in requests %}
+      <tr>
+        <td>{{ request.request_date }}</td>
+        <td>{{ request.hospital_name }}</td>
+        <td>{{ request.requested_blood_group }}</td>
+        <td class="text-center">
+          <a
+            href="#"
+            class="btn btn-danger action-button done-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#confirmationModal{{ request.request_id }}"
+          >
+            <i class="bi bi-check2-square"></i>
+          </a>
+        </td>
+      </tr>
+
+      <div
+        class="modal fade"
+        id="confirmationModal{{ request.request_id }}"
+        tabindex="-1"
+        aria-labelledby="confirmationModalLabel{{ request.request_id }}"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Are you sure you want to mark this request as completed?</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary close-btn"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <form method="POST" action="{{ url_for('current_requests') }}">
+                <input
+                  type="hidden"
+                  name="request_id"
+                  value="{{ request.request_id }}"
+                />
+                <button type="submit" class="btn btn-danger completed-btn">
+                  Complete
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="text-center">No current requests found.</p>
+  {% endif %}
+</div>
+{% endblock %}

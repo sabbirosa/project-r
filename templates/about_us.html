@@ -1,0 +1,135 @@
+{% extends "layout.html" %} {% block title %}About Us - {% endblock %} {% block
+content %}
+<div class="container mt-4">
+  <section class="home-body-section page-header text-center">
+    <h2>About Us</h2>
+    <p>Learn more about our organization and our mission.</p>
+  </section>
+
+  <section class="home-body-section about-section">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Our Mission</h2>
+        <p>
+          At Project R, our mission is to make a positive impact on society by
+          saving lives through blood donation. We are committed to ensuring a
+          stable and sufficient blood supply for those in need, ultimately
+          creating a healthier and more resilient community.
+        </p>
+      </div>
+
+      <div class="col-md-6 image-section">
+        <img
+          src="{{ url_for('static', filename='images/give-blood.jpg') }}"
+          alt="About Us Image"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="home-body-section values-section mt-4">
+    <h2>Our Values</h2>
+    <ul>
+      <li>
+        <strong>Community:</strong> We prioritize the well-being of our
+        community by ensuring a stable blood supply for medical treatments.
+      </li>
+      <li>
+        <strong>Impact:</strong> We believe in the life-changing impact of blood
+        donation and strive to encourage regular participation.
+      </li>
+      <li>
+        <strong>Education:</strong> We are dedicated to raising awareness about
+        the importance of blood donation and its positive effects.
+      </li>
+    </ul>
+  </section>
+
+  <section class="home-body-section team-section mt-4">
+    <h2>Meet Our Team</h2>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="team-member about-team-member">
+          <img
+            src="{{ url_for('static', filename='images/team/Sabbir Bin Abdul Latif.jpeg') }}"
+            alt="Sabbir Bin Abdul Latif"
+            class="img-fluid"
+          />
+          <div class="about-team-member-details">
+            <h4><b>Sabbir Bin Abdul Latif</b></h4>
+            <p>Founder & CEO</p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/sabbirosa" target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="https://www.facebook.com/sabbirosa"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="https://github.com/sabbirosa"
+                ><i class="bi bi-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="team-member about-team-member">
+          <img
+            src="{{ url_for('static', filename='images/team/Sultan Mehedi Masud.jpeg') }}"
+            alt="Sultan Mehedi Masud"
+            class="img-fluid"
+          />
+          <div class="about-team-member-details">
+            <h4><b>Sultan Mehedi Masud</b></h4>
+            <p>Chief Operating Officer</p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/sultan-mehedi-masud"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="https://www.facebook.com/sultanmehedimasud"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="https://github.com/sultanmehedimasud1"
+                ><i class="bi bi-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="team-member about-team-member">
+          <img
+            src="{{ url_for('static', filename='images/team/Susmita Biswas.jpeg') }}"
+            alt="Susmita Biswas"
+            class="img-fluid"
+          />
+          <div class="about-team-member-details">
+            <h4><b>Susmita Biswas</b></h4>
+            <p>Lead Volunteer Coordinator</p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/susmita-biswas-01a5b7267"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="https://www.facebook.com/profile.php?id=100055177826719"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="https://github.com/SusmitaBiswasAdor"
+                ><i class="bi bi-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br />
+</div>
+{% endblock %}

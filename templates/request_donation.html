@@ -1,0 +1,91 @@
+{% extends "layout.html" %} {% block title %}Request Donation - {% endblock %}
+{% block content %}
+<div class="main-container mt-4">
+  <h2>Request Donation</h2>
+  <form method="post" action="{{ url_for('request_donation') }}">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        required
+        value="{{ user_data.first_name }} {{ user_data.last_name }}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        name="phone"
+        required
+        value=" {{ user_data.phone_number }} "
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="hospital_name">Hospital Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="hospital_name"
+        name="hospital_name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="blood_group">Blood Group</label>
+      <select name="blood_group" required>
+        <option value="">Select Blood Group</option>
+        <option value="A+">A+</option>
+        <option value="B+">B+</option>
+        <option value="AB+">AB+</option>
+        <option value="O+">O+</option>
+        <option value="A-">A-</option>
+        <option value="B-">B-</option>
+        <option value="AB-">AB-</option>
+        <option value="O-">O-</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="urgency_level">Urgency Level</label>
+      <select name="urgency_level" required>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input
+        type="text"
+        class="form-control"
+        id="location"
+        name="location"
+        required
+        value="{{ user_data.location }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="need_by_date">Need By</label>
+      <input type="date" name="need_by_date" required />
+    </div>
+    <div class="form-group">
+      <label for="reason">Reason</label>
+      <textarea
+        class="form-control"
+        id="reason"
+        name="reason"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+    <button type="submit">Submit Request</button>
+  </form>
+</div>
+{% endblock %}

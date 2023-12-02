@@ -1,0 +1,116 @@
+{% extends "layout.html" %} {% block title %}Manage Users - {% endblock %} {%
+block content %}
+
+<div class="mt-4 body-container">
+  <h2>Manage Users</h2>
+  <input
+    type="text"
+    id="searchInput"
+    class="form-control mb-3"
+    placeholder="Search users..."
+  />
+  <div>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>User Type</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.user_id }}</td>
+        <td>{{ user.first_name }} {{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.user_type }}</td>
+        <td>{{ user.status }}</td>
+        <td>
+          <a
+            href="{{ url_for('edit_user', user_id=user.user_id) }}"
+            class="btn btn-primary action-button"
+          >
+            <i class="bi bi-pencil-square"></i>
+          </a>
+          <a
+            href="{{ url_for('delete_user', user_id=user.user_id) }}"
+            class="btn btn-danger action-button"
+            data-bs-toggle="modal"
+            data-bs-target="#confirmationModal{{ user.user_id }}"
+          >
+            <i class="bi bi-trash"></i>
+          </a>
+        </td>
+      </tr>
+      <div
+        class="modal fade"
+        id="confirmationModal{{ user.user_id }}"
+        tabindex="-1"
+        aria-labelledby="confirmationModalLabel{{ user.user_id }}"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Are you sure you want to delete this user?</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary close-btn"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <form
+                method="POST"
+                action="{{ url_for('delete_user', user_id=user.user_id) }}"
+              >
+                <button type="submit" class="btn btn-danger completed-btn">
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <tr>
+        <td colspan="6">No users found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $("#searchInput").on("input", function () {
+      var query = $(this).val().toLowerCase();
+
+      $("tbody tr").each(function () {
+        var name = $(this).find("td:nth-child(2)").text().toLowerCase();
+        var email = $(this).find("td:nth-child(3)").text().toLowerCase();
+
+        if (name.includes(query) || email.includes(query)) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  });
+</script>
+
+{% endblock %}

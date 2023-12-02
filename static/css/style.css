@@ -1,0 +1,688 @@
+:root {
+  --primary-color: #b30105;
+  --secondary-color: #fe6041;
+  --light-color: #a7bbf8;
+  --dark-color: #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+.primary-color {
+  color: var(--primary-color) !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.section-container {
+  height: 400px;
+  align-items: center;
+}
+
+.hero-content {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  font-weight: bold;
+}
+
+.hero-description {
+  font-size: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.section-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+input:focus {
+  outline: none;
+}
+
+body,
+h1,
+h2,
+p,
+div,
+select,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:hover {
+  outline: none;
+  background-color: transparent;
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+  margin-top: -10px;
+}
+
+.nav-link {
+  color: var(--dark-color) !important;
+  font-weight: normal;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+  border-bottom: var(--primary-color) 2px solid;
+  margin-bottom: -2px;
+}
+
+.dropdown-item {
+  color: var(--dark-color) !important;
+}
+
+.dropdown-item:hover {
+  color: white !important;
+  background-color: var(--primary-color) !important;
+}
+
+input[type="checkbox"]:checked:before {
+  color: black !important;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+table {
+  text-align: center;
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+
+.action-form {
+  display: block;
+  max-width: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.page-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin: 20px 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.reg-img {
+  width: 100%;
+}
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.remember-forgot-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.remember-me {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200px;
+}
+
+.remember-me input {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.remember-me label {
+  margin-bottom: 0.8rem;
+  color: #636363;
+}
+
+.forgot-password {
+  margin-top: -2px;
+}
+
+.forgot-password a {
+  color: #636363;
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+
+  color: var(--primary-color);
+}
+
+input,
+select {
+  width: 100%;
+  height: 50px !important;
+  padding: 10px;
+  margin-bottom: 15px !important;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+}
+
+form input,
+form textarea {
+  border-radius: 5px !important;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 15px !important;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.navbar {
+  padding: 0.5rem 4rem !important;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.025);
+}
+
+.navbar-toggler {
+  width: 15%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+button,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px !important;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.completed-btn,
+.close-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px !important;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.completed-btn {
+  background-color: var(--light-color) !important;
+}
+
+.action-btn2 {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px 10px !important;
+}
+
+.action-btn {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.action-btn:focus {
+  outline: none;
+}
+
+.action-btn:hover {
+  background-color: var(--primary-color);
+  color: rgb(255, 255, 255);
+}
+
+.close-btn {
+  background-color: var(--primary-color) !important;
+}
+
+.add-btn,
+.del-btn {
+  width: 50px;
+  text-align: center;
+  border: none;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.del-btn {
+  background-color: var(--light-color);
+  color: white;
+}
+
+.done-btn {
+  background-color: var(--light-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+}
+
+.disease-fields button {
+  height: auto;
+  width: auto;
+  padding: 0;
+}
+
+.disease-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.disease-field input {
+  margin-right: 5px;
+}
+
+.add-btn,
+.del-btn {
+  margin-left: 5px;
+}
+
+.add-btn,
+.del-btn i {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-body {
+  padding: 1.5rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.info-card {
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.request-card {
+  text-align: center;
+  height: 100%;
+  border-radius: 6px;
+  border: none;
+  background-color: transparent;
+}
+
+.card-body {
+  height: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+.card-body h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-muted {
+  color: white !important;
+  font-size: 14px;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+.card-btn {
+  margin-top: 40px;
+  width: 70%;
+  padding: 10px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card-btn:hover {
+  background-color: var(--secondary-color) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.card-btn:focus {
+  outline: none !important;
+}
+
+.card {
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+}
+
+.card blockquote h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.modal-header button {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.modal-footer button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px !important;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-footer form {
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 0px;
+}
+.image-section img {
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+
+  .reg-img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .nav .navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+}
+
+.team-member {
+  position: relative;
+}
+
+.about-team-member {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.about-team-member img {
+  border-radius: 10px 10px 0 0 !important;
+}
+
+.about-team-member-details {
+  padding: 20px 10px 0px 10px;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links a {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.team-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(179, 1, 5, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.team-member:hover .overlay {
+  opacity: 1;
+}
+
+.overlay a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.home-body-section {
+  padding: 30px 0px 0px 0px;
+}
+
+.home-body-section i {
+  line-height: 5rem;
+}
+
+.contact-section {
+  background-color: var(--primary-color);
+  padding: 40px 0;
+  color: #fff;
+}
+
+.contact-section h2 {
+  color: rgb(255, 255, 255);
+}
+
+section {
+  border-radius: 10px;
+}
+
+.contact-info p {
+  text-align: left;
+  line-height: 2rem;
+}
+
+.contact-info,
+.contact-form {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-form form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.how-to-donate {
+  padding: 40px 40px;
+  background-color: white;
+}
+
+.how-to-donate .section-container {
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.donation-basics {
+  padding: 40px 40px;
+  text-align: center;
+  height: 550px;
+}
+
+.donation-basics .row {
+  margin-top: 0px !important;
+}
+
+.basic-items {
+  padding: 30px 30px;
+  border-radius: 8px;
+  background-color: white;
+  margin: 25px 0px 0px 0px;
+}
+
+.team-section {
+  padding: 40px 40px;
+}
+
+.hero-section {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+  height: 100%;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/donation-image.jpeg");
+  background-size: fill;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(179, 1, 5, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  border-radius: 10px;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.lead {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  color: var(--primary-color);
+}

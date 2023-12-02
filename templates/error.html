@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block title %} {{ error_code }} Error - {%
+endblock %} {% block content %}
+<div class="container mt-4">
+  <h2>Oops, Something Went Wrong!</h2>
+  <div class="text-center">
+    <img
+      src="{{ url_for('static', filename='images/error-image.png') }}"
+      alt="Error Image"
+      class="img-fluid"
+      width="300"
+    />
+    <p class="lead">{{ code_msg }}</p>
+    <p class="lead">{{ msg }}</p>
+    <a href="/" class="action-btn">Go Home</a>
+  </div>
+  <br />
+</div>
+{% endblock %}

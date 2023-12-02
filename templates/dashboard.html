@@ -1,0 +1,142 @@
+{% extends "layout.html" %} {% block title %}{% if current_user.user_type ==
+'Admin' %} Admin Dashboard - {% elif current_user.user_type == 'Staff' %} Staff
+Dashboard - {% else %} Donor Dashboard - {% endif %} {% endblock %}{% block
+content %}
+<div class="mt-4">
+  {% if current_user.user_type == 'Admin' %}
+  <h2>Admin Dashboard</h2>
+  {% elif current_user.user_type == 'Staff' %}
+  <h2>Staff Dashboard</h2>
+  {% elif current_user.user_type == 'Donor' %}
+  <h2>Donor Dashboard</h2>
+  {% endif %}
+  <hr />
+  {% if current_user.user_type in ['Admin', 'Staff'] %}
+  <div class="row">
+    <div class="col-md-3">
+      <a href="/admin/manage_users">
+        <div class="card info-card bg-primary text-white text-center p-3">
+          <blockquote class="blockquote mb-0">
+            <h4>Total Users</h4>
+            {% if total_users %}
+            <h1>{{ total_users }}</h1>
+            {% else %}
+            <h1>0</h1>
+            {% endif %}
+          </blockquote>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="admin/manage_donations">
+        <div class="card info-card bg-primary text-white text-center p-3">
+          <blockquote class="blockquote mb-0">
+            <h4>Pending Donations</h4>
+            {% if pending_donations %}
+            <h1>{{ pending_donations }}</h1>
+            {% else %}
+            <h1>0</h1>
+            {% endif %}
+          </blockquote>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="/admin/manage_requests">
+        <div class="card info-card bg-primary text-white text-center p-3">
+          <blockquote class="blockquote mb-0">
+            <h4>Pending Requests</h4>
+            {% if pending_requests %}
+            <h1>{{ pending_requests }}</h1>
+            {% else %}
+            <h1>0</h1>
+            {% endif %}
+          </blockquote>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="/admin/manage_reports">
+        <div class="card info-card bg-primary text-white text-center p-3">
+          <blockquote class="blockquote mb-0">
+            <h4>Pending Reports</h4>
+            {% if pending_reports %}
+            <h1>{{ pending_reports }}</h1>
+            {% else %}
+            <h1>0</h1>
+            {% endif %}
+          </blockquote>
+        </div>
+      </a>
+    </div>
+  </div>
+  <hr />
+
+  {% endif %}
+  <div class="body-container">
+    <div class="row">
+      {% for request in matching_requests %}
+      <div class="col-md-3">
+        <div class="card request-card mb-3">
+          <div
+            class="card-body"
+            style="
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <div class="card-info">
+              <h5 class="card-title">Hospital: {{ request.hospital_name }}</h5>
+              <p class="card-text"><b>Location:</b> {{ request.location }}</p>
+              <p class="card-text">
+                <small class="text-muted"
+                  ><b>Reason:</b> {{ request.reason }}</small
+                >
+              </p>
+              <p class="card-text">
+                <small class="text-muted"
+                  ><b>Urgency:</b> {{ request.urgency_level }}</small
+                >
+              </p>
+              <p class="card-text">
+                <small class="text-muted"
+                  ><b>Needed By:</b> {{ request.need_by_date }}</small
+                >
+              </p>
+              <p class="card-text">
+                <small class="text-muted"
+                  ><b>Name:</b> {{ request.name }}</small
+                >
+              </p>
+              <p class="card-text">
+                <small class="text-muted"
+                  ><b>Contact:</b> {{ request.contact_information }}</small
+                >
+              </p>
+            </div>
+            <div class="card-action">
+              <a
+                href="{{ url_for('add_donation', 
+                      request_id=request.request_id,
+                      hospital_name=request.hospital_name,
+                      location=request.location) }}"
+                class="btn card-btn"
+              >
+                Accept
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <p>No matching blood requests found.</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

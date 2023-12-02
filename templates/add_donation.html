@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block title %}Add Donation - {% endblock %} {%
+block content %}
+<h2>Donate Blood</h2>
+<form
+  action="{{ url_for('add_donation') }}"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div>
+    <label for="hospital_name" required>Hospital Name:</label>
+    {% if hospital_name %}
+    <input
+      type="text"
+      name="hospital_name"
+      placeholder="Add hospital name"
+      value="{{ hospital_name }}"
+      required
+    />
+    {% else %}
+    <input
+      type="text"
+      name="hospital_name"
+      placeholder="Add hospital name"
+      required
+    />
+    {% endif %}
+  </div>
+  <div>
+    <label for="location">Location:</label>
+    {% if location %}
+    <input
+      type="text"
+      name="location"
+      placeholder="Add hospital location"
+      value="{{ location }}"
+      required
+    />
+    {% else %}
+    <input
+      type="text"
+      name="location"
+      placeholder="Add hospital location"
+      required
+    />
+    {% endif %}
+  </div>
+  {% if request_id %}
+  <input type="hidden" name="request_id" value="{{ request_id }}" />
+  {% endif %}
+  <div>
+    <label for="donated_date">Donated Date:</label>
+    <input type="date" name="donated_date" required />
+  </div>
+  <div>
+    <label for="proof_document">Proof Document:</label>
+    <input
+      type="file"
+      name="proof_document"
+      accept=".pdf, .jpg, .png, .jpeg, ."
+      required
+    />
+  </div>
+  <div>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %} {% block title %}Login - {% endblock %} {% block
+content %}
+
+<h2 class="page-title">Login</h2>
+<form action="/login" method="post">
+  <div>
+    <input type="email" name="email" placeholder="Email" required />
+  </div>
+  <div>
+    <input type="password" name="password" placeholder="Password" required />
+  </div>
+
+  <div class="remember-forgot-container">
+    <div class="remember-me">
+      <input type="checkbox" name="remember_me" id="remember_me" />
+      <label for="remember_me">Remember Me</label>
+    </div>
+
+    <div class="forgot-password">
+      <a class="primary-color" href="/forget_password">Forgot Password?</a>
+    </div>
+  </div>
+
+  <div>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+  <button type="submit">Login</button>
+  <p>
+    Don't have an account?
+    <a class="primary-color" href="/register">Register</a>
+  </p>
+</form>
+
+{% endblock %}

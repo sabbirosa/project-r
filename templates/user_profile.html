@@ -1,0 +1,40 @@
+{% extends 'layout.html' %} {% block title %}{{ session.user_first_name }}'s
+Profile - {% endblock %} {% block content %}
+<div class="mt-6">
+  <h2 class="mb-4">{{ session.user_first_name }}'s Profile</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{ user.first_name }} {{ user.last_name }}</h4>
+          <p class="card-text"><strong>User ID:</strong> {{ user.user_id }}</p>
+          <p class="card-text">
+            <strong>Date of Birth:</strong> {{ user.date_of_birth }}
+          </p>
+          <p class="card-text"><strong>Gender:</strong> {{ user.gender }}</p>
+          <p class="card-text">
+            <strong>Blood Group:</strong> {{ user.blood_group }}
+          </p>
+          <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+          <p class="card-text">
+            <strong>Phone:</strong> {{ user.phone_number }}
+          </p>
+          <p class="card-text">
+            <strong>Location:</strong> {{ user.location }}
+          </p>
+          <p class="card-text">
+            <strong>Blood Diseases:</strong>
+            {% if user.diseases|length == 0 %}None{% endif %} {% for disease in
+            user.diseases %}{{ disease }}{% if not loop.last %}, {% endif %}{%
+            endfor %}
+          </p>
+
+          <a href="{{ url_for('edit_profile') }}" class="card-btn btn mt-3"
+            >Edit Profile</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

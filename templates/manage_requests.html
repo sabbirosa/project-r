@@ -1,0 +1,96 @@
+{% extends "layout.html" %} {% block title %}Manage Requests - {% endblock %} {%
+block content %}
+
+<div class="mt-4 body-container">
+  <h2>Manage Blood Requests</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Request ID</th>
+        <th>Hospital Name</th>
+        <th>Blood Group</th>
+        <th>Urgency Level</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for request in requests %}
+      <tr>
+        <td>{{ request.request_id }}</td>
+        <td>{{ request.hospital_name }}</td>
+        <td>{{ request.requested_blood_group }}</td>
+        <td>{{ request.urgency_level }}</td>
+        {% if request.is_fulfilled == 1 %}
+        <td>Done</td>
+        {% else %}
+        <td>Pending</td>
+        {% endif %}
+        <td>
+          {% if request.is_fulfilled == 0 %}
+          <a
+            href="/admin/manage_requests/{{ request.request_id }}/fulfill"
+            class="btn btn-success"
+            ><i class="bi bi-check-square-fill"></i
+          ></a>
+          {% else %}
+          <a
+            href="#"
+            class="btn btn-primary view-details-btn"
+            data-toggle="modal"
+            data-target="#requestDetailsModal{{ request.request_id }}"
+            data-request="{{ request | tojson | safe }}"
+          >
+            <i class="bi bi-eye-fill"></i>
+          </a>
+          {% endif %}
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="6">No blood requests found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% for request in requests %}
+<div
+  class="modal fade"
+  id="requestDetailsModal{{ request.request_id }}"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <b class="primary-color">Request Details</b>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <p><b>Request ID:</b> {{ request.request_id }}</p>
+        <p><b>Requester ID:</b> {{ request.user_id }}</p>
+        <p><b>Requester Name:</b> {{ request.name }}</p>
+        <p><b>Requester Phone:</b> {{ request.contact_information }}</p>
+        <p><b>Hospital Name:</b> {{ request.hospital_name }}</p>
+        <p><b>Blood Group:</b> {{ request.requested_blood_group }}</p>
+        <p><b>Urgency Level:</b> {{ request.urgency_level }}</p>
+
+        <p>
+          <b>Status:</b> {% if request.is_fulfilled == 1 %}Done{% else
+          %}Pending{% endif %}
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %} {% endblock %}

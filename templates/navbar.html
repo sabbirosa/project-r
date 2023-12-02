@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"
+    ><img
+      src="{{ url_for('static', filename='images/site-logo.png') }}"
+      width="200"
+      height="80"
+      class="d-inline-block align-top"
+      alt=""
+    />
+  </a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      {% if not session.user_first_name %}
+      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="loggedOutDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Sign In / Register
+        </a>
+        <div class="dropdown-menu" aria-labelledby="loggedOutDropdown">
+          <a class="dropdown-item" href="/login">Sign In</a>
+          <a class="dropdown-item" href="/register">Register</a>
+        </div>
+      </li>
+
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/request_donation">Request Donation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/current_requests">Current Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add_donation">Add Donation</a>
+      </li>
+
+      {% if session.user_role in ['Admin', 'Staff'] %}
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="adminDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Manage
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          aria-labelledby="adminDropdown"
+        >
+          <a class="dropdown-item" href="/admin/manage_users">Manage Users</a>
+          <a class="dropdown-item" href="/admin/manage_requests"
+            >Manage Blood Requests</a
+          >
+          <a class="dropdown-item" href="/admin/manage_donations"
+            >Manage Donations</a
+          >
+          <a class="dropdown-item" href="/admin/manage_reports"
+            >Manage Reports</a
+          >
+        </div>
+      </li>
+      {% endif %}
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="userDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {% if session.user_role in ['Admin', 'Staff'] %}
+          <i class="bi bi-person-fill-gear"></i> {{ session.user_first_name }}
+          {% else %} <i class="bi bi-person-fill"></i> {{
+          session.user_first_name }} {% endif %}
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          aria-labelledby="userDropdown"
+        >
+          <a class="dropdown-item" href="/user/history">History</a>
+          <a class="dropdown-item" href="/user/profile">View Profile</a>
+          <a class="dropdown-item" href="/user/edit_profile">Edit Profile</a>
+          <a class="dropdown-item" href="/user/change_password"
+            >Change Password</a
+          >
+          {% if session.user_role in ['Donor'] %}
+          <a class="dropdown-item" href="/user/report">Report</a>
+          {% endif %}
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

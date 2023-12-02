@@ -1,0 +1,101 @@
+{% extends "layout.html" %} {% block title %}Manage Reports - {% endblock %} {%
+block content %}
+
+<div class="mt-4 body-container">
+  <h2>Manage Violation Reports</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Report ID</th>
+        <th>Violator ID</th>
+        <th>Reporter ID</th>
+        <th>Report Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for report in reports %}
+      <tr>
+        <td>{{ report.report_id }}</td>
+        <td>{{ report.violator_id }}</td>
+        <td>{{ report.reporter_id }}</td>
+        <td>{{ report.report_date }}</td>
+        <td>{{ report.violation_reason }}</td>
+        {% if report.is_resolved %}
+        <td>Resolved</td>
+        {% else %}
+        <td>Pending</td>
+        {% endif %}
+        <td>
+          {% if report.is_resolved %}
+          <a
+            href="#"
+            class="btn btn-primary view-details-btn"
+            data-toggle="modal"
+            data-target="#reportDetailsModal{{ report.report_id }}"
+            data-report="{{ report | tojson | safe }}"
+          >
+            <i class="bi bi-eye-fill"></i>
+          </a>
+          {% else %}
+          <a
+            href="/admin/manage_reports/{{ report.report_id }}/resolve"
+            class="btn btn-success"
+            ><i class="bi bi-check-square"></i
+          ></a>
+          <a
+            href="/admin/manage_reports/{{ report.report_id }}/ban"
+            class="btn btn-danger"
+            ><i class="bi bi-person-exclamation"></i
+          ></a>
+
+          {% endif %}
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="7">No reports found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% for report in reports %}
+<div
+  class="modal fade"
+  id="reportDetailsModal{{ report.report_id }}"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <b class="primary-color">Report Details</b>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <p><b>Report ID:</b> {{ report.report_id }}</p>
+        <p><b>Violator ID:</b> {{ report.violator_id }}</p>
+        <p><b>Reporter ID:</b> {{ report.reporter_id }}</p>
+        <p><b>Report Date:</b> {{ report.report_date }}</p>
+        <p><b>Reason:</b> {{ report.violation_reason }}</p>
+        <p>
+          <b>Status:</b> {% if report.is_resolved %}Resolved{% else %}Pending{%
+          endif %}
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %} {% endblock %}

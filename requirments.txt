@@ -1,0 +1,5 @@
+Flask
+Flask-Login
+mysql-connector-python
+Werkzeug
+Flask-Session

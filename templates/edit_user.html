@@ -1,0 +1,42 @@
+{% extends "layout.html" %} {% block title %}Edit User - {% endblock %} {% block content %}
+
+<div class="mt-4">
+    <h2>Edit User</h2>
+    <form action="{{ url_for('edit_user', user_id=user.user_id) }}" method="post">
+        <div>
+            <label>First Name:</label>
+            <input type="text" name="first_name" value="{{ user.first_name }}">
+        </div> 
+        <div>
+            <label>Last Name:</label>
+            <input type="text" name="last_name" value="{{ user.last_name }}">
+        </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email" value="{{ user.email }}">
+            </div>
+            <div>
+                <label>Phone:</label>
+                <input type="tel" name="phone" value="{{ user.phone_number }}">
+            </div>
+            <div>
+                <label>User Type:</label>
+                <select name="user_type">
+                    <option value="Admin" {% if user.user_type == 'Admin' %} selected {% endif %}>Admin</option>
+                    <option value="Staff" {% if user.user_type == 'Staff' %} selected {% endif %}>Staff</option>
+                    <option value="Donor" {% if user.user_type == 'Donor' %} selected {% endif %}>Donor</option>
+                </select>
+            </div>
+            <div>
+                <label>Status:</label>
+                <select name="status">
+                    <option value="Active" {% if user.status == 'Active' %} selected {% endif %}>Active</option>
+                    <option value="Banned" {% if user.status == 'Banned' %} selected {% endif %}>Banned</option>
+                </select>
+            </div>
+            <button type="submit">Update User</button>
+        </form>
+</div>
+
+{% endblock %}
+

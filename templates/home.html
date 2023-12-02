@@ -1,0 +1,353 @@
+{% extends "layout.html" %} {% block title %}Home - {% endblock %} {% block
+content %}
+<div>
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-background"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Be The One To Inspire Change</h1>
+        <p class="hero-description">
+          Every person has the power to save a life. Donating blood only takes a
+          little of your time, and it can mean a lifetime for patients in need.
+        </p>
+        <a href="/register" class="action-btn hero-cta">Donate Today</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-body-section mt-4">
+    <h2>Why Donate Blood?</h2>
+
+    <div class="card-deck mt-4">
+      <div class="card">
+        <div class="card-body text-center">
+          <i class="bi bi-heart h1"></i>
+          <h5 class="card-title">Save Lives</h5>
+          <p class="card-text">
+            Your blood donation can save up to three lives. Be a hero and make a
+            life-changing impact on someone in need.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body text-center">
+          <i class="bi bi-people h1"></i>
+          <h5 class="card-title">Community Health</h5>
+          <p class="card-text">
+            Contribute to the overall health and well-being of your community by
+            ensuring a stable blood supply for medical treatments.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body text-center">
+          <i class="bi bi-shield h1"></i>
+          <h5 class="card-title">Personal Health</h5>
+          <p class="card-text">
+            Regular blood donation can have health benefits for the donor,
+            including reducing the risk of certain diseases and maintaining good
+            cardiovascular health.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-body-section mt-4">
+    <h2>Our Mission</h2>
+
+    <div class="row mt-4 justify-content-center align-items-center">
+      <div class="col-md-6 image-section">
+        <img
+          src="{{ url_for('static', filename='images/blood-donation-save-lives.jpeg') }}"
+          alt="Mission Image"
+          class="img-fluid"
+        />
+      </div>
+
+      <div class="col-md-6 d-flex align-items-center">
+        <div>
+          <p>
+            At Project R, our mission is to save lives through the noble act of
+            blood donation. We are committed to making a positive impact on the
+            community by ensuring a stable and sufficient blood supply for those
+            in need. Through our efforts, we strive to create a healthier and
+            more resilient society.
+          </p>
+          <strong>Our Goals:</strong>
+          <ul>
+            <li>
+              Work towards maintaining a consistent and ample blood inventory to
+              meet the demands of medical treatments and emergencies.
+            </li>
+            <li>
+              Foster a sense of community and encourage regular blood donation
+              participation among the residents of our region.
+            </li>
+            <li>
+              Raise awareness about the importance of blood donation and educate
+              the public on its life-saving impact.
+            </li>
+          </ul>
+          <a href="/register" class="action-btn action-btn2">Register</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-body-section mt-4 donation-basics">
+    <div class="section-container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>Donation Basics</h2>
+          <p>
+            Giving blood is as easy as 1, 2, 3. Discover more about how to
+            donate and share your power to save lives.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-3 basic-items text-center mx-auto">
+          <h5><b>About Blood</b></h5>
+          <p>
+            Blood is essential to life and there is no substitute. It cannot be
+            made or manufactured. Generous blood donors are the only source of
+            blood for patients in need of a blood transfusion.
+          </p>
+        </div>
+
+        <div class="col-md-3 basic-items text-center mx-auto">
+          <h5><b>Am I Eligible?</b></h5>
+          <p>
+            To prioritize the safety and well-being of both donors and patients,
+            there are blood donation requirements that donors must meet based on
+            their intended donation method.
+          </p>
+        </div>
+
+        <div class="col-md-3 basic-items text-center mx-auto">
+          <h5><b>Maximize Your Impact</b></h5>
+          <p>
+            Unlock the power of your blood type and save more lives when you
+            Target Your Type®.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12 text-center">
+          <a href="about" class="hero-cta action-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-body-section mt-4 how-to-donate">
+    <div class="section-container text-center">
+      <h2>How to Donate</h2>
+      <p>Follow these simple steps to make a life-changing donation.</p>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="step-card">
+            <i class="bi bi-person h1 text-primary"></i>
+            <h3>Register</h3>
+            <p>
+              Create an account to get started. It only takes a few minutes.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="step-card">
+            <i class="bi bi-door-open h1 text-success"></i>
+            <h3>Login</h3>
+            <p>Sign in to your account securely using your credentials.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="step-card">
+            <i class="bi bi-heart h1 text-danger"></i>
+            <h3>Donate</h3>
+            <p>
+              Choose a donation center, schedule an appointment, and make a
+              life-saving donation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-body-section mt-4 team-section">
+    <div class="text-center">
+      <h2>Meet Our Team</h2>
+      <p>Discover the talented individuals behind this wonderful platform.</p>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="team-member position-relative">
+            <img
+              src="{{ url_for('static', filename='images/team/Susmita Biswas.jpeg') }}"
+              class="img-fluid"
+              alt="Susmita Biswas"
+            />
+            <div
+              class="overlay d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://www.linkedin.com/in/susmita-biswas-01a5b7267"
+                target="_blank"
+                class="linkedin"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a
+                href="https://github.com/SusmitaBiswasAdor"
+                target="_blank"
+                class="github"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100055177826719"
+                target="_blank"
+                class="facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </div>
+          </div>
+          <br />
+          <h4><b>Susmita Biswas</b></h4>
+          <p>Front-End Developer</p>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member position-relative">
+            <img
+              src="{{ url_for('static', filename='images/team/Sultan Mehedi Masud.jpeg') }}"
+              class="img-fluid"
+              alt="Sultan Mehedi Masud"
+            />
+            <div
+              class="overlay d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://www.linkedin.com/in/sultan-mehedi-masud"
+                target="_blank"
+                class="linkedin"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a
+                href="https://github.com/sultanmehedimasud1"
+                target="_blank"
+                class="github"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/sultanmehedimasud"
+                target="_blank"
+                class="facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </div>
+          </div>
+          <br />
+          <h4><b>Sultan Mehedi Masud</b></h4>
+          <p>Database Developer</p>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member position-relative">
+            <img
+              src="{{ url_for('static', filename='images/team/Sabbir Bin Abdul Latif.jpeg') }}"
+              class="img-fluid"
+              alt="Sabbir Bin Abdul Latif"
+            />
+            <div
+              class="overlay d-flex align-items-center justify-content-center"
+            >
+              <a
+                href="https://linkedin.com/in/sabbirosa"
+                target="_blank"
+                class="linkedin"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a
+                href="https://github.com/sabbirosa"
+                target="_blank"
+                class="github"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a href="#" target="_blank" class="facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </div>
+          </div>
+          <br />
+          <h4><b>Sabbir Bin Abdul Latif</b></h4>
+          <p>Back-End Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-body-section mt-4 contact-section">
+    <div class="text-center">
+      <h2>Contact Us</h2>
+      <p>
+        Feel free to reach out to us with any inquiries or questions. We'd love
+        to hear from you!
+      </p>
+
+      <div class="row mt-4">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div class="contact-info text-end">
+            <h3>Contact Information</h3>
+            <p>
+              <strong>Email:</strong> info@example.com<br />
+              <strong>Phone:</strong> +123 456 7890<br />
+              <strong>Address:</strong> 123 Street, Cityville, Country
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form action="#" method="post">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="action-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br />
+</div>
+
+{% endblock %}

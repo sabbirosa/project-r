@@ -1,0 +1,75 @@
+{% extends "layout.html" %} {% block title %}Edit Profile - {% endblock %} {%
+block content %}
+<h2>Edit Profile</h2>
+<form action="{{ url_for('edit_profile') }}" method="post">
+  <div>
+    <label>First Name:</label>
+    <input type="text" name="first_name" value="{{ user.first_name }}" />
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input type="text" name="last_name" value="{{ user.last_name }}" />
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ user.email }}" />
+  </div>
+  <div>
+    <label>Phone:</label>
+    <input type="tel" name="phone" value="{{ user.phone_number }}" />
+  </div>
+  <div id="disease-fields">
+    <label>Blood Diseases:</label>
+    <div class="disease-field">
+      <input
+        type="text"
+        name="blood_diseases_0"
+        class="disease-input"
+        placeholder="Enter blood disease"
+        value="{{ user.diseases[0] if user.diseases else 'None' }}"
+      />
+      <button
+        class="add-btn"
+        type="button"
+        onclick="addDiseaseFieldOnUserEdit()"
+      >
+        <i class="bi bi-plus-square"></i>
+      </button>
+    </div>
+
+    {% for disease in user.diseases[1:] %}
+    <div class="disease-field">
+      <input
+        type="text"
+        name="blood_diseases_${{loop.counter}}"
+        class="disease-input"
+        placeholder="Enter blood disease"
+        value="{{ disease }}"
+      />
+      <button
+        class="del-btn"
+        type="button"
+        onclick="removeDiseaseField(this.parentElement)"
+      >
+        <i class="bi bi-x-square"></i>
+      </button>
+    </div>
+
+    {% endfor %}
+
+    <div class="add-new-diseases"></div>
+
+    <div>
+      <label>Location:</label>
+      <input
+        type="text"
+        name="location"
+        class="location-input"
+        value="{{ user.location }}"
+      />
+    </div>
+
+    <button type="submit">Update Profile</button>
+  </div>
+</form>
+{% endblock %}
