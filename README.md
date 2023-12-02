@@ -17,11 +17,11 @@ This is the final project of our CSE370 course (Database Systems) The idea is, u
 
 ## ER Diagram 🔗
 
-<img src="static/images/Project R EER.png" alt="drawing"/>
+<img src="app/static/images/Project R EER.png" alt="drawing"/>
 
 ## Schema Diagram 📑
 
-<img src="static/images/Project R Schema.png" alt="drawing"/>
+<img src="app/static/images/Project R Schema.png" alt="drawing"/>
 
 ## Featuers and Contributions
 
