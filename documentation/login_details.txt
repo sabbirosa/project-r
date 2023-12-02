@@ -1,5 +1,5 @@
 sabbir@project-r.com | A+ | No Disease | Requested AB+ |
-Admin@321
+Admin@123
 
 susmita@project-r.com | AB+ | No Disease| 
 Admin@123
@@ -8,7 +8,7 @@ sultan@project-r.com | A+ | No Disease |
 Admin@123
 
 asifkhan@gmail.com | A+ | No Disease | Requested A+ |
-Donor@123
+Staff@123
 
 tawsifkhan@gmail.com | A+ | Disease |
 Donor@123

@@ -84,8 +84,6 @@ CREATE TABLE violation_reports (
     FOREIGN KEY (reporter_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
--- Change the donors to admin
-UPDATE users SET user_type = 'Admin' WHERE user_id = [user_ID_here];
-
--- Change the donors to staff
-UPDATE users SET user_type = 'Staff' WHERE user_id = [user_ID_here];
+-- Change the role of first registered user to donors to admin
+UPDATE users SET user_type = 'Admin' WHERE user_id = 1;
+INSERT INTO staff (user_id, role) VALUES (1, 'Admin');

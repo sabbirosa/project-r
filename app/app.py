@@ -1,15 +1,15 @@
 from datetime import datetime, timedelta
 
+from config import Config
 from flask import (Flask, abort, flash, jsonify, redirect, render_template,
                    request, session, url_for)
 from flask_login import (LoginManager, UserMixin, current_user, login_required,
                          login_user, logout_user)
+from helpers import is_strong_password, save_file
 from mysql.connector import connect
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from config import Config
 from flask_session import Session
-from helpers import is_strong_password, save_file
 
 app = Flask(__name__)
 login_manager = LoginManager(app)
@@ -116,11 +116,11 @@ def register():
         cursor.execute("INSERT INTO users (first_name, last_name, date_of_birth, gender, email, phone_number, password, blood_group, location, user_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (form_data['first_name'], form_data['last_name'], form_data['dob'], form_data['gender'], form_data['email'], form_data['phone'], hashed_password, form_data['blood_group'], form_data['location'], 'Donor'))
         db.commit()
         
+        user_id = cursor.lastrowid
+        
         cursor.execute("INSERT INTO donors (user_id, last_donation_date) VALUES (%s, NULL)", (cursor.lastrowid,))
         db.commit()
         
-        user_id = cursor.lastrowid
-
         blood_diseases = []
 
         for key in request.form:
@@ -139,10 +139,10 @@ def register():
                 cursor.execute("INSERT INTO diseases (disease_name) VALUES (%s)", (disease,))
                 db.commit()
                 disease_id = cursor.lastrowid
-
+            
             cursor.execute("INSERT INTO user_diseases (user_id, disease_id) VALUES (%s, %s)", (user_id, disease_id))
             db.commit()
-
+        
         db.close()
         
         flash("Registration successful!", "success")
