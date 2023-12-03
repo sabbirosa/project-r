@@ -167,7 +167,7 @@ Replace [username] with your MySQL username, and the path to the backup file, re
 1.  Create a `config.py` at the root folder of the application.
 2.  Copy the following code to the file:
 
-    ```
+    ```python
     import os
 
     class Config:
@@ -205,7 +205,7 @@ Replace [username] with your MySQL username, and the path to the backup file, re
 - Open a web browser and navigate to http://127.0.0.1:5000 (or the URL provided in the terminal).
 - Register as a new user. Then make the user admin with the following queries:
 
-```
+```SQL
 UPDATE users SET user_type = 'Admin' WHERE user_id = 1;
 INSERT INTO staff (user_id, role) VALUES (1, 'Admin');
 ```
