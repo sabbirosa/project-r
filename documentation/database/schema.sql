@@ -18,21 +18,23 @@ CREATE TABLE users (
 );
 
 CREATE TABLE diseases (
-    disease_id INT AUTO_INCREMENT PRIMARY KEY,
-    disease_name VARCHAR(100)
+    disease_id INT AUTO_INCREMENT,
+    disease_name VARCHAR(100),
+    PRIMARY KEY (disease_id)
 );
 
 CREATE TABLE user_diseases (
     user_id INT,
     disease_id INT,
     PRIMARY KEY (user_id, disease_id),
-    FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
-    FOREIGN KEY (`disease_id`) REFERENCES `diseases` (`disease_id`) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (disease_id) REFERENCES diseases(disease_id) ON DELETE CASCADE
 );
 
 CREATE TABLE staff (
-    user_id INT PRIMARY KEY,
     role ENUM('Admin', 'Staff'),
+    user_id INT,
+    PRIMARY KEY (user_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
@@ -87,3 +89,4 @@ CREATE TABLE violation_reports (
 -- Change the role of first registered user to donors to admin
 UPDATE users SET user_type = 'Admin' WHERE user_id = 1;
 INSERT INTO staff (user_id, role) VALUES (1, 'Admin');
+

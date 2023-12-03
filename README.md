@@ -23,7 +23,7 @@ This is the final project of our CSE370 course (Database Systems) The idea is, u
 
 <img src="documentation/database/Project R Schema.png" alt="drawing"/>
 
-## Featuers 🧑🏻‍💻
+## Featuers 🔍
 
 **Dynamic Navbar:** The navbar on the site changes based on the user role and session status. If a donor is logged in the navbar changes according to donor features. And if an admin logged in navbar contains some more menu items like manage donations, manage requests, etc. Also, a drop-down menu with the user’s first name appears after a successful login.
 
@@ -108,7 +108,7 @@ Users can change the password. For that, they will have to enter their current p
 - [x] Delete User
 - [x] User Profile
 
-🔗 [Live link of the Application](https://google.com/)
+🔗 [Live link of the Application](https://project-r.sabbir.co/)
 
 Although, if you want to run the application to your server you can do that too. To set up the Flask web application along with a MySQL database, you can follow these guidelines. I've included steps for setting up the application environment, installing dependencies from the requirements.txt file, and restoring a MySQL database backup. To run this app to your machine just download the repository and follow the steps.
 
