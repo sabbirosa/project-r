@@ -15,13 +15,13 @@
 
 This is the final project of our CSE370 course (Database Systems) The idea is, users can register and request for blood donation and donate bloods, and Admin/ Staffs can approve, reject, or confirm their donations. The general purpose of this project is to make the blood donation process easier for everyone, have a database of donation seekers and donors, and last but not the least, keep track of donations. The frontend is built using HTML, CSS, Bootstrap, JavaScript, jQuery the backend using Flask, and the database using MySQL.
 
-## ER Diagram 🔗
+## EER Diagram 🔗
 
-<img src="documentation/database/Project R EER.png" alt="drawing"/>
+<img src="documentation/database/Project R EER.png" alt="EER Diagram"/>
 
 ## Schema Diagram 📑
 
-<img src="documentation/database/Project R Schema.png" alt="drawing"/>
+<img src="documentation/database/Project R Schema.png" alt="Schema Diagram"/>
 
 ## Featuers 🔍
 
