@@ -223,15 +223,15 @@ Thanks goes to these wonderful people
 
 <table>
   <tr>
-    <td align="center"><a href="https://sabbir.co"><img src="app/static/images/team/Sabbir Bin Abdul Latif.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="https://sabbir.co"><img src="app/static/images/team/sabbir-bin-abdul-latif.jpeg" width="100px;" alt=""/>
     <br />
     <sub><b>Sabbir Bin Abdul Latif</b></sub></a>
     </td>
-    <td align="center"><a href="#"><img src="app/static/images/team/Sultan Mehedi Masud.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="#"><img src="app/static/images/team/sultan-mehedi-masud.jpeg" width="100px;" alt=""/>
     <br />
     <sub><b>Sultan Mehedi Masud</b></sub></a>
     </td>
-    <td align="center"><a href="#"><img src="app/static/images/team/Susmita Biswas.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="#"><img src="app/static/images/team/susmita-biswas.jpeg" width="100px;" alt=""/>
     <br />
     <sub><b>Susmita Biswas</b></sub></a>
     </td>
