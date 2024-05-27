@@ -7,7 +7,6 @@
   <img alt="Flask" src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white"/>
   <img alt="Apache" src="https://img.shields.io/badge/Apache-%23D42029.svg?&style=for-the-badge&logo=apache&logoColor=white"/>
   <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%2300f.svg?&style=for-the-badge&logo=mysql&logoColor=white"/>
-  <img alt="Heroku" src="https://img.shields.io/badge/Heroku-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white"/>
   <img alt="License" src="https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge"/>
 </p>
 
@@ -223,15 +222,15 @@ Thanks goes to these wonderful people
 
 <table>
   <tr>
-    <td align="center"><a href="https://sabbir.co"><img src="app/static/images/team/sabbir-bin-abdul-latif.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="https://www.linkedin.com/in/sabbirosa"><img src="https://media.licdn.com/dms/image/D5603AQEXlYoou3obDw/profile-displayphoto-shrink_400_400/0/1711444280181?e=1722470400&v=beta&t=fXEic4lkqk_btvtACrnC7C6mjiAQ9yKra1IqUv6c3i8" width="100px;" alt=""/>
     <br />
     <sub><b>Sabbir Bin Abdul Latif</b></sub></a>
     </td>
-    <td align="center"><a href="#"><img src="app/static/images/team/sultan-mehedi-masud.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="https://www.linkedin.com/in/sultan-mehedi-masud"><img src="https://media.licdn.com/dms/image/D4E03AQFfa-Q4crrt3g/profile-displayphoto-shrink_400_400/0/1699899673258?e=1722470400&v=beta&t=K09ADqeu80hJdNfNL-AScaRGGETHagUk8WaCIRhYNWQ" width="100px;" alt=""/>
     <br />
     <sub><b>Sultan Mehedi Masud</b></sub></a>
     </td>
-    <td align="center"><a href="#"><img src="app/static/images/team/susmita-biswas.jpeg" width="100px;" alt=""/>
+    <td align="center"><a href="https://www.linkedin.com/in/susmita-biswas-01a5b7267"><img src="https://media.licdn.com/dms/image/D5603AQH2Z94IGgE2Pg/profile-displayphoto-shrink_400_400/0/1704562312536?e=1722470400&v=beta&t=mQTP3og1hr2SCKSmfdAkjg3DKP1MeRrtK6SQ-yFJBxY" width="100px;" alt=""/>
     <br />
     <sub><b>Susmita Biswas</b></sub></a>
     </td>
